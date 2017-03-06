@@ -56,3 +56,11 @@ df=foreach (i= 1:length(filenames),.combine=data.frame, .export=c('trainControl'
 df
 write.csv(df,'randomforest.plot.csv')
 ```
+Call:
+roc.default(response = testing$label, predictor = p$case)
+
+Data: p$case in 162 controls (testing$label case) > 1399 cases (testing$label ctrl).
+Area under the curve: 0.8166
+
+###double check random forest model using NTF to do prediction 
+
