@@ -75,6 +75,7 @@ med$V2_V3=paste(med$V2,med$V3,sep='_')
 med=subset(med, select=c(V1,V2_V3,n))
 medd=spread(med, V2_V3,n )
 write.csv(medd,'pca_feature_forrandomeforest.csv')
+
 ```
 #### extract principal component and do prediction
 
