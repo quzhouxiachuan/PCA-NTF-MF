@@ -18,7 +18,7 @@ write.csv(dd,'raw_feature_prediction_merge.csv')
 savehistory(file = ".Rhistory")
 ```
 
-###use randome forest to do prediction 
+### use randome forest to do prediction 
 ```
 library(doParallel)
 #library(kernlab)
@@ -63,4 +63,20 @@ Data: p$case in 162 controls (testing$label case) > 1399 cases (testing$label ct
 Area under the curve: 0.8166
 
 ###double check random forest model using NTF to do prediction 
+
+### PCA analysis 
+#### construct input file 
+```
+library(dplyr)
+library(tidyr)
+x=read.csv("final_NTF_input.removesymbol.csv",header=F)
+med= x %>% group_by(V1,V2,V3) %>% count(V3)
+med$V2_V3=paste(med$V2,med$V3,sep='_')
+med=subset(med, select=c(V1,V2_V3,n))
+medd=spread(med, V2_V3,n )
+write.csv(medd,'pca_feature_forrandomeforest.csv')
+```
+#### extract principal component and do prediction
+
+
 
