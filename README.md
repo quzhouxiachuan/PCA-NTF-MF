@@ -84,3 +84,10 @@ trainPC <- predict(preProc,log10(training[,-58]+1))
 modelFit <- train(training$type ~ .,method="glm",data=trainPC)
 ```
 
+when use raw feature, logistic regression, have such warning message: 
+```
+Warning message: In predict.lm(object, newdata, se.fit, scale = 1, type = ifelse(type ==  : prediction from a rank-deficient fit may be misleading; 
+```
+I tried set.seed(1234), auc is 0.6266, the other time is 0.5886; the result is not very stable. 
+
+
