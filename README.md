@@ -78,6 +78,9 @@ write.csv(medd,'pca_feature_forrandomeforest.csv')
 
 ```
 #### extract principal component and do prediction
-
-
+```
+preProc <- preProcess(mm[,-7047],method="pca",pcaComp=2)
+trainPC <- predict(preProc,log10(training[,-58]+1))
+modelFit <- train(training$type ~ .,method="glm",data=trainPC)
+```
 
