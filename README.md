@@ -1,4 +1,15 @@
-# PCA-NTF-MF
+# NTF
+### use the follow command to extract rxnorm-atc relationship: 
+```
+select * from 
+where type ='PT'
+```
+
+### upload the 
+
+
+
+
 ###some important file for the analysis 
 use file /home/ydw529/other/phenotype0720/data_csv_processed/LimitedHF_final_combined.csv
 for linear regression prediction, you used "../pipeline_runs/phenotype_range_1-160_alpha_1_gamma_0.001_0.08_0.07/results/auc/phenotypes" files. The original file to produce this is?
